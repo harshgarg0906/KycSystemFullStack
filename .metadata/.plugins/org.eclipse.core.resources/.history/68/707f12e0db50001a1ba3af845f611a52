@@ -1,0 +1,28 @@
+package com.example.demo.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.KYC;
+
+@RestController
+public class KycContoller {
+
+	@GetMapping("/data")
+	public KYC getKycData()
+	{
+		System.out.println("in the controlo	");
+		KYC kycData=new KYC();
+		//kycData.setName("Harsh");
+		return kycData;
+	}
+	
+	@PostMapping("/data")
+	public ResponseEntity<KYC> insertData(@RequestBody KYC kycData)
+	{
+		return null;
+	}
+}

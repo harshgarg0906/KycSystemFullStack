@@ -1,0 +1,11 @@
+package com.example.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.model.KYC;
+
+public interface KycRepository extends JpaRepository<KYC, Integer>{
+
+	public KYC findByFirstNameAndAadharId(String firstName,int adharId);
+	public KYC findById(int adharId);
+}

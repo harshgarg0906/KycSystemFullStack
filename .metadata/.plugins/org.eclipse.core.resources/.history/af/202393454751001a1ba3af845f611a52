@@ -1,0 +1,100 @@
+package com.example.demo.model;
+
+public class KYC {
+
+	String firstName;
+	String lastName;
+	String emailId;
+	int phoneNumber;
+	String profileImageUrl;
+	String adharUrl;
+
+	
+	public KYC()
+	{
+		
+	}
+
+
+	public KYC(String firstName, String lastName, String emailId, int phoneNumber, String profileImageUrl,
+			String adharUrl) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.emailId = emailId;
+		this.phoneNumber = phoneNumber;
+		this.profileImageUrl = profileImageUrl;
+		this.adharUrl = adharUrl;
+	}
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+
+	public String getProfileImageUrl() {
+		return profileImageUrl;
+	}
+
+
+	public void setProfileImageUrl(String profileImageUrl) {
+		this.profileImageUrl = profileImageUrl;
+	}
+
+
+	public String getAdharUrl() {
+		return adharUrl;
+	}
+
+
+	public void setAdharUrl(String adharUrl) {
+		this.adharUrl = adharUrl;
+	}
+
+
+	@Override
+	public String toString() {
+		return "KYC [firstName=" + firstName + ", lastName=" + lastName + ", emailId=" + emailId + ", phoneNumber="
+				+ phoneNumber + ", profileImageUrl=" + profileImageUrl + ", adharUrl=" + adharUrl + "]";
+	}
+	
+	
+	
+	
+}

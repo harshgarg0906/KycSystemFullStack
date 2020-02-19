@@ -1,0 +1,14 @@
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 60%;
+}
+.handle
+{
+    max-width: 70%;
+}
+
+.mat-raised-button {
+    margin-top: 20px;
+}

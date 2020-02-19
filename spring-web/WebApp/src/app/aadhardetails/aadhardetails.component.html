@@ -1,0 +1,19 @@
+<form [formGroup]="detailForm" (ngSubmit)="onSubmit()">
+    <div fxLayout="column" fxLayoutGap="10px"> 
+            <mat-form-field fxFlex="20%">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Harsh" formControlName="firstName">
+            </mat-form-field>
+            <span *ngIf="!detailForm.get('firstName').valid && detailForm.get('firstName').touched">Enter the name</span>
+
+            <mat-form-field fxFlex="20%">
+                    <mat-label>Aadhar Number</mat-label>
+                    <input matInput placeholder="222222" formControlName="aadharNumber" type="number"> 
+            </mat-form-field>
+            <span *ngIf="!detailForm.get('aadharNumber').valid && detailForm.get('aadharNumber').touched">Enter the Aadhar Number</span>
+    </div>
+    <div fxLayout fxLayoutGap="10px">
+            <button mat-raised-button color="primary" [disabled]="!detailForm.valid">Submit</button>
+            <button mat-raised-button color="warn" type="button">Cancel</button>
+    </div>
+</form>

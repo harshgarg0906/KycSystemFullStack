@@ -1,0 +1,9 @@
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 60%;
+}
+input.ng-invalid.ng-touched{
+    border: 1 px solid red;
+}

@@ -1,0 +1,52 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.KYC;
+import com.example.demo.service.KycService;
+
+@RestController
+public class KycContoller {
+
+	@Autowired
+	KycService kycService;
+	
+	@GetMapping("/data")
+	public KYC getKycData()
+	{
+		System.out.println("in the controlo	");
+		KYC kycData=new KYC();
+		//kycData.setName("Harsh");
+		return kycData;
+	}
+	
+	@GetMapping("/data/{firstName}/{adharId}")
+	public ResponseEntity<KYC>  getDataByAdharandName(@PathVariable String firstName,@PathVariable int adharId)
+	{
+		System.out.println(firstName);
+		System.out.println(adharId);
+		kycService.findByFirstNameAndAdharId(firstName, adharId);
+		return null;
+	}
+	
+	@PostMapping("/data")
+	public ResponseEntity<KYC> insertData(@RequestBody KYC kycData)
+	{
+		this.kycService.saveKycData(kycData);
+		return new ResponseEntity<>(kycData,HttpStatus.CREATED);
+	}
+	
+	@PatchMapping("/data")
+	public ResponseEntity<KYC> updateData(@RequestBody KYC kycData)
+	{
+		return null;
+	}
+}

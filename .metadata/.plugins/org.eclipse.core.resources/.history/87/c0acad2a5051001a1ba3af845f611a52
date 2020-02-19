@@ -1,0 +1,26 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.KYC;
+import com.example.demo.repository.KycRepository;
+
+//import com.example.demo.repository.KycRepository;
+
+@Service
+public class KycService {
+
+	KycRepository kycRepository;
+	
+	@Autowired
+	public KycService(KycRepository kycRepository)
+	{
+		this.kycRepository=kycRepository;
+	}
+	
+	public void saveKycData(KYC kycData)
+	{
+	      this.kycRepository.save(kycData);
+	}
+}

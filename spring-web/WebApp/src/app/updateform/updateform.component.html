@@ -1,0 +1,56 @@
+<div *ngIf="!userExist"><p>User not exist</p></div>
+<div *ngIf="userExist">
+<form [formGroup]="aadharUpdatedForm" (ngSubmit)="onSubmit()">
+
+    <div fxLayout="column"> 
+        <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Harsh" formControlName="firstName">
+        </mat-form-field>
+
+        <span *ngIf="!aadharUpdatedForm.get('firstName').valid && aadharUpdatedForm.get('firstName').touched">Enter the First Name</span>
+
+
+        <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last name" formControlName="lastName">
+        </mat-form-field>
+        <span *ngIf="!aadharUpdatedForm.get('lastName').valid && aadharUpdatedForm.get('lastName').touched">Enter the Last Name</span>
+        
+        <mat-form-field>
+                <mat-label>Aadhar Number</mat-label>
+                <input matInput placeholder="Aadhar Number" formControlName="aadharId" readonly="readonly">
+        </mat-form-field>
+        <span *ngIf="!aadharUpdatedForm.get('aadharId').valid && aadharUpdatedForm.get('aadharId').touched">Enter the Aadhar Number</span>
+
+        <mat-form-field>
+                <mat-label>Email Id</mat-label>
+                <input matInput placeholder="harsh@gmail.com" formControlName="emailId">
+        </mat-form-field>
+        <span *ngIf="!aadharUpdatedForm.get('emailId').valid && aadharUpdatedForm.get('emailId').touched">Enter the emailId</span>        
+
+        <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="23232323" formControlName="phoneNumber">
+        </mat-form-field>
+        <span *ngIf="!aadharUpdatedForm.get('phoneNumber').valid && aadharUpdatedForm.get('phoneNumber').touched">Enter the Phone Number</span>
+
+        <div>
+         <label>Image Upload</label>
+         <input type="file" (change)="onFileSelected($event)" style="display:none" #fileInput>
+         <i class="material-icons" (click)="fileInput.click()">description</i>
+        </div>
+
+         <div>
+         <label>Aadhar Upload</label>
+         <input type="file" (change)="onFileSelectedAadhar($event)" style="display:none" #fileInput1>
+         <i class="material-icons" (click)="fileInput1.click()">description</i>
+        </div>
+        <div fxLayout fxLayoutGap="10px">
+                <button mat-raised-button color="primary" type="submit" >Update</button>
+                <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+       
+    </div>    
+</form>
+</div>
